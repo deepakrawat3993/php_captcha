@@ -1,0 +1,12 @@
+<?php
+session_start();
+$code=rand(10000,99999);
+$_SESSION["code"]=$code;
+$im=imagecreatetruecolor(50,24);
+$bg=imagecolorallocate($im,22,56,165);
+$fg=imagecolorallocate($im,255,255,255);
+imagefill($im,0,0,$bg);
+imagestring($im,5,5,5,$code,$fg);
+imagepng($im);
+imagedestroy($im);
+?>
